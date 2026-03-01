@@ -8,14 +8,14 @@ namespace laba_1.creational.Factory
     {
         public string GetInfo()
         {
-            return "This is a mouse.";
+            return "Це миша.";
         }
     }
     public class Keyboard : IPeripheral
     {
         public string GetInfo()
         {
-            return "This is a keyboard.";
+            return "Це клавіатура.";
         }
         
     }
@@ -23,7 +23,7 @@ namespace laba_1.creational.Factory
     {
         public string GetInfo()
         {
-            return "This is a monitor.";
+            return "Це монітор.";
         }
     }
     public class PeripheralFactory

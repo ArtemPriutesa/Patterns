@@ -1,5 +1,6 @@
 using laba_1.creational.Model;
 using laba_1.creational.Factory;
+using System.Globalization;
 
 namespace laba_1.creational.Model
 
@@ -8,9 +9,9 @@ namespace laba_1.creational.Model
     {
         public ICPU CPU { get; set; }
         public IMotherboard Motherboard { get; set; }
-        public int RAM { get; set; }
+        public string RAM { get; set; }
         public string GPU { get; set; }
-        public Computer(ICPU cpu, IMotherboard motherboard, int ram, string gpu)
+        public Computer(ICPU cpu, IMotherboard motherboard, string ram, string gpu)
         {
             CPU = cpu;
             Motherboard = motherboard;

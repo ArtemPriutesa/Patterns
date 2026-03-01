@@ -22,7 +22,7 @@ namespace laba_1.creational
             _computer.Motherboard = _pcFactory.CreateMotherboard(socketType);
             return this;
         }
-        public ComputerBuilder BuildRAM(int ram)
+        public ComputerBuilder BuildRAM(string ram)
         {
             _computer.RAM = ram;
             return this;

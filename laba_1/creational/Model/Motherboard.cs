@@ -17,7 +17,7 @@ namespace laba_1.creational.Model
         }
         public string GetMotherboard()
         {
-            return $"Intel Motherboard with Socket: {socketType}";
+            return $"Материнська плата Intel з сокетом: {socketType}";
         }
     }
 
@@ -34,7 +34,7 @@ namespace laba_1.creational.Model
         }
         public string GetMotherboard()
         {
-            return $"AMD Motherboard with Socket: {socketType}";
+            return $"Материнська плата AMD з сокетом: {socketType}";
         }
     }
 }
