@@ -1,8 +1,8 @@
-using laba_1.creational.Model;
+using Patterns.Model;
 
-namespace laba_1.creational.Factory
+namespace Patterns.AbstractFactoryPattern
 {
-    class IntelFactory : IPcFactory
+    public class IntelFactory : IPcFactory
     {
         public ICPU CreateCpu(string cpuModel)
         {

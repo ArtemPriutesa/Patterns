@@ -1,6 +1,4 @@
-using laba_1.creational.FactoryMethod;
-
-namespace laba_1.creational.FactoryMethod
+namespace Patterns.FactoryMethodPattern
 {
     public class RetailOrderManager : OrderManager
     {

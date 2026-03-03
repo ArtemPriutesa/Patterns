@@ -1,7 +1,6 @@
-using laba_1.creational.Model;
-using laba_1.creational.FactoryMethod;
+using Patterns.Model;
 
-namespace laba_1.creational.FactoryMethod
+namespace Patterns.FactoryMethodPattern
 {
     public abstract class OrderManager
     {

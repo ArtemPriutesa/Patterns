@@ -1,6 +1,6 @@
-using laba_1.creational.Model;
+using Patterns.Model;
 
-namespace laba_1.creational.Factory
+namespace Patterns.AbstractFactoryPattern
 {
     public interface IPcFactory
     {

@@ -1,4 +1,4 @@
-namespace laba_1.creational
+namespace Patterns.SingletonPattern
 {
     public class Warehouse
     {

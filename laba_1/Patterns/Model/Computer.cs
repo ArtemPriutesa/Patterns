@@ -1,10 +1,4 @@
-using laba_1.creational.Model;
-using laba_1.creational.Factory;
-
-using System.Globalization;
-
-namespace laba_1.creational.Model
-
+namespace Patterns.Model
 {
     public class Computer
     {
@@ -12,6 +6,7 @@ namespace laba_1.creational.Model
         public IMotherboard? Motherboard { get; set; }
         public string RAM { get; set; } = "";
         public string GPU { get; set; } = "";
+
         public Computer(ICPU cpu, IMotherboard motherboard, string ram, string gpu)
         {
             CPU = cpu;
@@ -28,6 +23,7 @@ namespace laba_1.creational.Model
         {
             return $"Computer [CPU: {CPU}, RAM: {RAM}, Motherboard: {Motherboard}, GPU: {GPU}]";
         }
+
         public Computer Clone()
         {
             return new Computer(CPU!, Motherboard!, RAM, GPU);

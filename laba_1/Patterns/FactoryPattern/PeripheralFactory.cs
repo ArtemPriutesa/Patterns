@@ -1,24 +1,26 @@
-namespace laba_1.creational.Factory
+namespace Patterns.FactoryPattern
 {
     public interface IPeripheral
     {
         string GetInfo();
     }
-    public class Maouse : IPeripheral
+
+    public class Mouse : IPeripheral
     {
         public string GetInfo()
         {
             return "Це миша.";
         }
     }
+
     public class Keyboard : IPeripheral
     {
         public string GetInfo()
         {
             return "Це клавіатура.";
         }
-        
     }
+
     public class Monitor : IPeripheral
     {
         public string GetInfo()
@@ -26,6 +28,7 @@ namespace laba_1.creational.Factory
             return "Це монітор.";
         }
     }
+
     public class PeripheralFactory
     {
         public IPeripheral CreatePeripheral(string type)
@@ -33,7 +36,7 @@ namespace laba_1.creational.Factory
             switch (type.ToLower())
             {
                 case "mouse":
-                    return new Maouse();
+                    return new Mouse();
                 case "keyboard":
                     return new Keyboard();
                 case "monitor":
