@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education\\Patterns\\Patterns\\laba_1\\laba_1\\laba_1.csproj",
+      "projectUniqueName": "D:\\Education\\Patterns\\Patterns\\laba_1\\laba_1.csproj",
       "projectName": "laba_1",
-      "projectPath": "D:\\Education\\Patterns\\Patterns\\laba_1\\laba_1\\laba_1.csproj",
+      "projectPath": "D:\\Education\\Patterns\\Patterns\\laba_1\\laba_1.csproj",
       "packagesPath": "C:\\Users\\ARTEM\\.nuget\\packages\\",
-      "outputPath": "D:\\Education\\Patterns\\Patterns\\laba_1\\laba_1\\obj\\",
+      "outputPath": "D:\\Education\\Patterns\\Patterns\\laba_1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ARTEM\\AppData\\Roaming\\NuGet\\NuGet.Config"

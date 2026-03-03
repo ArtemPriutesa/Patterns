@@ -1,0 +1,5 @@
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.AssemblyInfoInputs.cache
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.AssemblyInfo.cs
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.csproj.CoreCompileInputs.cache
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.sourcelink.json

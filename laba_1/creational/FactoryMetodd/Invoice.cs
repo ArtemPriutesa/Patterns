@@ -1,3 +1,5 @@
+using laba_1.creational.Model;
+
 namespace laba_1.creational.FactoryMethod
 {
     public interface IInvoice

@@ -1,5 +1,10 @@
 namespace laba_1.creational.Model
 {
+    public interface ICPU
+    {
+        string GetCPU();
+        string ModelName();
+    }
     class IntelCPU : ICPU
     {
         private string model;
