@@ -1,7 +1,9 @@
 ﻿using System;
 
-static class Main
+static class Program
 {
-    
-
+    static void Main()
+    {
+        Console.WriteLine("Patterns Project Started");
+    }
 }

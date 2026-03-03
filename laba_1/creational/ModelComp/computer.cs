@@ -8,10 +8,10 @@ namespace laba_1.creational.Model
 {
     public class Computer
     {
-        public ICPU CPU { get; set; }
-        public IMotherboard Motherboard { get; set; }
-        public string RAM { get; set; }
-        public string GPU { get; set; }
+        public ICPU? CPU { get; set; }
+        public IMotherboard? Motherboard { get; set; }
+        public string RAM { get; set; } = "";
+        public string GPU { get; set; } = "";
         public Computer(ICPU cpu, IMotherboard motherboard, string ram, string gpu)
         {
             CPU = cpu;
@@ -30,7 +30,7 @@ namespace laba_1.creational.Model
         }
         public Computer Clone()
         {
-            return new Computer(CPU, Motherboard, RAM, GPU);
+            return new Computer(CPU!, Motherboard!, RAM, GPU);
         }
     }
 }

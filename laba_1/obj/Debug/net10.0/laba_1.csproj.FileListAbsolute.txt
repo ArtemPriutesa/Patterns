@@ -3,3 +3,13 @@ D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.AssemblyInfoInput
 D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.AssemblyInfo.cs
 D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.csproj.CoreCompileInputs.cache
 D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.sourcelink.json
+D:\Education\Patterns\Patterns\laba_1\bin\Debug\net10.0\laba_1.exe
+D:\Education\Patterns\Patterns\laba_1\bin\Debug\net10.0\laba_1.deps.json
+D:\Education\Patterns\Patterns\laba_1\bin\Debug\net10.0\laba_1.runtimeconfig.json
+D:\Education\Patterns\Patterns\laba_1\bin\Debug\net10.0\laba_1.dll
+D:\Education\Patterns\Patterns\laba_1\bin\Debug\net10.0\laba_1.pdb
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.dll
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\refint\laba_1.dll
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.pdb
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\laba_1.genruntimeconfig.cache
+D:\Education\Patterns\Patterns\laba_1\obj\Debug\net10.0\ref\laba_1.dll
