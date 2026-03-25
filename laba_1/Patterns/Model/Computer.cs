@@ -1,13 +1,13 @@
 namespace Patterns.Model
 {
-    public class Computer
+    public abstract class Computer
     {
         public ICPU? CPU { get; set; }
         public IMotherboard? Motherboard { get; set; }
         public string RAM { get; set; } = "";
         public string GPU { get; set; } = "";
 
-        public Computer(ICPU cpu, IMotherboard motherboard, string ram, string gpu)
+        protected Computer(ICPU cpu, IMotherboard motherboard, string ram, string gpu)
         {
             CPU = cpu;
             Motherboard = motherboard;
@@ -15,18 +15,13 @@ namespace Patterns.Model
             GPU = gpu;
         }
 
-        public Computer()
-        {
-        }
+        public abstract void RunSystem();
 
         public override string ToString()
         {
-            return $"Computer [CPU: {CPU}, RAM: {RAM}, Motherboard: {Motherboard}, GPU: {GPU}]";
+            return $"System: {this.GetType().Name} [CPU: {CPU?.ModelName()}, RAM: {RAM}, GPU: {GPU}]";
         }
 
-        public Computer Clone()
-        {
-            return new Computer(CPU!, Motherboard!, RAM, GPU);
-        }
+        public abstract Computer Clone();
     }
 }
