@@ -5,43 +5,47 @@ namespace Patterns.BuilderPattern
     public class ComputerBuilder
     {
         private readonly AbstractFactoryPattern.IPcFactory _pcFactory;
-        private Computer _computer;
+        private ICPU? _cpu;
+        private IMotherboard? _motherboard;
+        private string _ram = "";
+        private string _gpu = "";
 
         public ComputerBuilder(AbstractFactoryPattern.IPcFactory factory)
         {
             _pcFactory = factory;
-            _computer = new Computer();
         }
 
         public ComputerBuilder BuildCPU(string cpuModel)
         {
-            _computer.CPU = _pcFactory.CreateCpu(cpuModel);
+            _cpu = _pcFactory.CreateCpu(cpuModel);
             return this;
         }
 
         public ComputerBuilder BuildMotherboard(string socketType)
         {
-            _computer.Motherboard = _pcFactory.CreateMotherboard(socketType);
+            _motherboard = _pcFactory.CreateMotherboard(socketType);
             return this;
         }
 
         public ComputerBuilder BuildRAM(string ram)
         {
-            _computer.RAM = ram;
+            _ram = ram;
             return this;
         }
 
         public ComputerBuilder BuildGPU(string gpu)
         {
-            _computer.GPU = gpu;
+            _gpu = gpu;
             return this;
         }
 
         public Computer GetComputer()
         {
-            Computer finishedPc = _computer;
-            _computer = new Computer();
-            return finishedPc;
+            if (_cpu == null || _motherboard == null)
+            {
+                throw new InvalidOperationException("CPU and Motherboard must be set");
+            }
+            return new Computer(_cpu, _motherboard, _ram, _gpu);
         }
     }
 }

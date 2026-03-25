@@ -1,9 +1,14 @@
+using Patterns.Model;
+using Patterns.Structural;
 namespace Patterns.SingletonPattern
 {
-    public class Warehouse
+
+    public class Warehouse : IWarehouse
     {
-        private Dictionary<string, int> _stock = new Dictionary<string, int>();
+       private Dictionary<HardwareSpecs, int> _stock = new Dictionary<HardwareSpecs, int>();
         
+        private Dictionary<string, HardwareSpecs> _specsCache = new Dictionary<string, HardwareSpecs>();
+
         private static readonly Lazy<Warehouse> _instance = 
             new Lazy<Warehouse>(() => new Warehouse());
 
@@ -11,27 +16,57 @@ namespace Patterns.SingletonPattern
 
         private Warehouse()
         {
-            _stock.Add("i9-14900K", 5);
-            _stock.Add("Z790", 5);
-            _stock.Add("32GB DDR5", 10);
-            _stock.Add("RTX 4090", 2);
-            _stock.Add("Mouse", 10);
-            _stock.Add("Keyboard", 10);
-            _stock.Add("Monitor", 5);
+            AddInitialStock("i9-14900K", "Intel", "CPU", 5);
+            AddInitialStock("RTX 4090", "NVIDIA", "GPU", 2);
+            AddInitialStock("Z790", "ASUS", "Motherboard", 5);
+            AddInitialStock("Mouse", "Logitech", "Periphery", 10);
         }
-        //Метод для перевірки наявності запчастини на складі
+
+        private HardwareSpecs GetOrCreateSpecs(string name, string brand, string category)
+        {
+            if (!_specsCache.ContainsKey(name))
+            {
+                _specsCache[name] = new HardwareSpecs(name, brand, category);
+            }
+            return _specsCache[name];
+        }
+
+        private void AddInitialStock(string name, string brand, string category, int count)
+        {
+            var specs = GetOrCreateSpecs(name, brand, category);
+            _stock[specs] = count;
+        }
+
         public bool IsAvailable(string partName)
         {
-            return _stock.ContainsKey(partName) && _stock[partName] > 0;
+            foreach (var specs in _stock.Keys)
+            {
+                if (specs.Name == partName && _stock[specs] > 0) return true;
+            }
+            return false;
         }
-        //Метод для зменшення кількості запчастини на складі
+
         public void ReduceStock(string partName)
         {
-            if (IsAvailable(partName))
+            HardwareSpecs? targetSpecs = null;
+            foreach (var specs in _stock.Keys)
             {
-                _stock[partName]--;
-                Console.WriteLine($"[Склад] Кількість {partName} зменшена. Залишилось: {_stock[partName]}");
+                if (specs.Name == partName)
+                {
+                    targetSpecs = specs;
+                    break;
+                }
             }
-        }
+
+            if (targetSpecs != null && _stock[targetSpecs] > 0)
+            {
+                _stock[targetSpecs]--;
+                Console.WriteLine($"[Склад] Видано: {targetSpecs}. Залишилось: {_stock[targetSpecs]}");
+            }
+            else
+            {
+                Console.WriteLine($"[Склад] Товар {partName} відсутній!");
+            }
+    }
     }
 }

@@ -5,6 +5,7 @@ using Patterns.BuilderPattern;
 using Patterns.FactoryMethodPattern;
 using Patterns.SingletonPattern;
 using Patterns.FactoryPattern;
+using Patterns.Structural;
 
 static class Program
 {
@@ -44,9 +45,59 @@ static class Program
         Console.WriteLine($"Gaming PC: {gamingPc}\n");
 
         
-        Console.WriteLine("сінгелтон");
+        Console.WriteLine("Cінгелтон");
         var warehouse = Warehouse.Instance;
         Console.WriteLine($"Склад доступний: {warehouse.IsAvailable("i9-14900K")}\n");
+
+        Console.WriteLine("Структурні патерни\n");
+
+        Console.WriteLine("Адаптер");
+        var oldProc = new OldServerProcessor();
+        var cpuAdapter = new ServerCpuAdapter(oldProc);
+        Console.WriteLine(cpuAdapter.GetCPU());
+        Console.WriteLine();
+
+        Console.WriteLine("Міст");
+        var gamingDesktop = new GamingDesktop(intelCpu, intelMB, "16GB DDR4", "RTX 3070");
+        gamingDesktop.RunSystem();
+        var serverNode = new ServerNode(amdCpu, amdMB, "64GB DDR4", "No GPU");
+        serverNode.RunSystem();
+        Console.WriteLine();
+
+        Console.WriteLine("Композит");
+        var hardwareGroup = new HardwareGroup("Gaming Setup");
+        hardwareGroup.AddComponent(intelCpu);
+        hardwareGroup.AddComponent(intelMB);
+        hardwareGroup.DisplayDetails(0);
+        Console.WriteLine($"Total price: ${hardwareGroup.GetPrice()}");
+        Console.WriteLine();
+
+        Console.WriteLine("Декоратор");
+        var overclockedCpu = new OverclockedCpu(intelCpu);
+        Console.WriteLine(overclockedCpu.GetCPU());
+        Console.WriteLine($"Price: ${overclockedCpu.GetPrice()}");
+        Console.WriteLine();
+
+        Console.WriteLine("Фасад");
+        var diagnosticFacade = new DiagnosticFacade(intelCpu, intelMB);
+        diagnosticFacade.RunDiagnostics();
+        Console.WriteLine();
+
+        Console.WriteLine("Легковаговик");
+        var spec1 = new HardwareSpecs("i9-14900K", "Intel", "CPU");
+        var spec2 = new HardwareSpecs("Ryzen 9 7950X", "AMD", "CPU");
+        var spec3 = new HardwareSpecs("i9-14900K", "Intel", "CPU");
+        Console.WriteLine($"Spec1: {spec1}");
+        Console.WriteLine($"Spec2: {spec2}");
+        Console.WriteLine($"Spec3: {spec3}");
+        Console.WriteLine();
+
+        Console.WriteLine("Проксі");
+        var adminProxy = new WarehouseProxy("Admin");
+        var userProxy = new WarehouseProxy("User");
+        adminProxy.ReduceStock("i9-14900K");
+        userProxy.ReduceStock("i9-14900K");
+        Console.WriteLine();
 
         
         Console.WriteLine("фабричний метод");
