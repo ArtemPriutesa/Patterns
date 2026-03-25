@@ -18,5 +18,26 @@ namespace Patterns.Model
         {
             return $"Материнська плата AMD з сокетом: {socketType}";
         }
+
+        public string GetDetails()
+        {
+            return GetMotherboard();
+        }
+
+        public string GetName()
+        {
+            return "AMDMotherboard";
+        }
+
+        public double GetPrice()
+        {
+            return 150.0;
+        }
+
+        public void DisplayDetails(int depth)
+        {
+            string indent = new string(' ', depth * 2);
+            Console.WriteLine($"{indent}- {GetName()}: {GetDetails()} (Price: ${GetPrice()})");
+        }
     }
 }

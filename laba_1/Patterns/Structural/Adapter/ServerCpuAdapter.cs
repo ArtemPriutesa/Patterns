@@ -20,5 +20,24 @@ namespace Patterns.Structural
         {
             return oldProcessor.GetIdentifier();
         }
+
+        public string GetDetails()
+        {
+            return GetCPU();
+        }
+
+        public string GetName()
+        {
+            return ModelName();
+        }
+        public double GetPrice()
+        {
+            return 499.99; 
+            }
+        public void DisplayDetails(int depth)
+        {
+            string indent = new string(' ', depth * 2);
+            Console.WriteLine($"{indent}- {GetName()}: {GetDetails()} (Price: ${GetPrice()})");
+        }
     }
 }
