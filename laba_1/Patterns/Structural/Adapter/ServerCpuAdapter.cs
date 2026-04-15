@@ -13,7 +13,7 @@ namespace Patterns.Structural
 
         public string GetCPU()
         {
-            return $"Adapted CPU: {oldProcessor.GetIdentifier()} with specs: {oldProcessor.TechnicalSpecs}";
+            return $"Адаптер CPU: {oldProcessor.GetIdentifier()} : {oldProcessor.TechnicalSpecs}";
         }
 
         public string ModelName()

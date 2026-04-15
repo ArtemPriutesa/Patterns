@@ -21,7 +21,7 @@ namespace Patterns.BuilderPattern
             return this;
         }
 
-        public ComputerBuilder BuildMotherboard(string socketType)
+    public ComputerBuilder BuildMotherboard(string socketType)
         {
             _motherboard = _pcFactory.CreateMotherboard(socketType);
             return this;

@@ -11,7 +11,7 @@ namespace Patterns.Structural
 
         public override void RunSystem()
         {
-            Console.WriteLine($"Running gaming desktop with {CPU?.ModelName()} and GPU: {GPU}");
+            Console.WriteLine($"Запуск ігрового компьютера с {CPU?.ModelName()} и GPU: {GPU}");
         }
 
         public override Computer Clone()

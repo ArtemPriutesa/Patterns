@@ -15,7 +15,7 @@ namespace Patterns.Structural
 
         public override string GetDetails()
         {
-            return $"{_cpu.GetDetails()} - This CPU is overclocked.";
+            return $"{_cpu.GetDetails()} - This CPU is overclockedу.";
         }
 
         public override double GetPrice()

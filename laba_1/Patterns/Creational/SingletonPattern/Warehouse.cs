@@ -12,6 +12,8 @@ namespace Patterns.SingletonPattern
         private static readonly Lazy<Warehouse> _instance = 
             new Lazy<Warehouse>(() => new Warehouse());
 
+
+        // 
         public static Warehouse Instance => _instance.Value;
 
         private Warehouse()
@@ -21,7 +23,7 @@ namespace Patterns.SingletonPattern
             AddInitialStock("Z790", "ASUS", "Motherboard", 5);
             AddInitialStock("Mouse", "Logitech", "Periphery", 10);
         }
-
+        //метод для отримання або створення об'єкта HardwareSpecs
         private HardwareSpecs GetOrCreateSpecs(string name, string brand, string category)
         {
             if (!_specsCache.ContainsKey(name))
@@ -30,13 +32,13 @@ namespace Patterns.SingletonPattern
             }
             return _specsCache[name];
         }
-
+        //метод для додавання початкового запасу товарів на склад
         private void AddInitialStock(string name, string brand, string category, int count)
         {
             var specs = GetOrCreateSpecs(name, brand, category);
             _stock[specs] = count;
         }
-
+        //метод для перевірки наявності товару на складі
         public bool IsAvailable(string partName)
         {
             foreach (var specs in _stock.Keys)
@@ -45,7 +47,7 @@ namespace Patterns.SingletonPattern
             }
             return false;
         }
-
+        //метод для видачі товару зі складу
         public void ReduceStock(string partName)
         {
             HardwareSpecs? targetSpecs = null;

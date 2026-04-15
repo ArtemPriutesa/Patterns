@@ -9,7 +9,7 @@ namespace Patterns.Model
 
         public override void RunSystem()
         {
-            Console.WriteLine("Server node is running with high performance and reliability.");
+            Console.WriteLine($"Запуск серверного вузла з {CPU?.ModelName()} и RAM: {RAM}");
         }
 
         public override Computer Clone()
