@@ -3,6 +3,7 @@ using Patterns.Model;
 
 namespace Patterns.Behavioral.State
 {
+    // Клас замовлення, який використовує патерн State для управління своїм станом
     public class Order
     {
         public string OrderId { get; private set; }

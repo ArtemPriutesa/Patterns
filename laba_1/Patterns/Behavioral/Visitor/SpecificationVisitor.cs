@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Patterns.Behavioral.Visitor
 {
+    // Конкретний відвідувач для збору іформації про компоненти комп'ютера та створення специфікації системи
     public class SpecificationVisitor : IComponentVisitor
     {
         private readonly List<string> _specifications = new();

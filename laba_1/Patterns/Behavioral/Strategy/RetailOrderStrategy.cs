@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Strategy
 {
+    // Конкретна стратегія обробки замовлення для роздрібних клієнтів
     public class RetailOrderStrategy : IOrderProcessingStrategy
     {
         public string GetName() => "Роздрібне замовлення";

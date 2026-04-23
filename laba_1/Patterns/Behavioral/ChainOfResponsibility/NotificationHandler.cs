@@ -4,6 +4,7 @@ namespace Patterns.Behavioral.ChainOfResponsibility
 {
     public class NotificationHandler : OrderHandler
     {
+        // Обробник для сповіщення клієнта про статус замовлення
         public override void Handle(OrderRequest request)
         {
             if (!request.IsReadyToShip)

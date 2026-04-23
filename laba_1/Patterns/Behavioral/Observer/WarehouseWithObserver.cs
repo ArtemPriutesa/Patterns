@@ -4,6 +4,7 @@ using Patterns.Model;
 
 namespace Patterns.Behavioral.Observer
 {
+    // Розширений клас складу, який підтримує патерн Observer для сповіщення про зміни запасів
     public class WarehouseWithObserver : IWarehouseObservable
     {
         private static WarehouseWithObserver? _instance;

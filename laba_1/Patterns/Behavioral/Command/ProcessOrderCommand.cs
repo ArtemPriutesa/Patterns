@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Command
 {
+    // Команда для виконання операцій над замовленням (process, ship, deliver, cancel)
     public class ProcessOrderCommand : ICommand
     {
         private readonly Order _order;

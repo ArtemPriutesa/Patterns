@@ -2,6 +2,7 @@ using System;
 
 namespace Patterns.Behavioral.Observer
 {
+    // Спостерігач для отримання сповіщень про критичні запаси на складі
     public class StockAlertObserver : IWarehouseObserver
     {
         private readonly int _minimumThreshold;

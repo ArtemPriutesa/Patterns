@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Patterns.Behavioral.Command
 {
+    // Клас для виклику та управління командами
     public class CommandInvoker
     {
         private readonly Stack<ICommand> _executedCommands = new();

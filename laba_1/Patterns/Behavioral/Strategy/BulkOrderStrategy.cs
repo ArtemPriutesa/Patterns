@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Strategy
 {
+    // Конкретна стратегія обробки замовлення для оптових покупців
     public class BulkOrderStrategy : IOrderProcessingStrategy
     {
         private readonly int _quantity;

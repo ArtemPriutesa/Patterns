@@ -2,6 +2,7 @@ using System;
 
 namespace Patterns.Behavioral.Visitor
 {
+    // Конкретний відвідувач, який реалізує логіку розрахунку загальної вартості комп'ютера, відвідуючи кожен компонент
     public class PriceCalculatorVisitor : IComponentVisitor
     {
         public decimal TotalPrice { get; private set; }

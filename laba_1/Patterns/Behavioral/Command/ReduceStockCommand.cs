@@ -3,9 +3,7 @@ using Patterns.Behavioral.Observer;
 
 namespace Patterns.Behavioral.Command
 {
-    /// <summary>
-    /// Команда для зменшення кількості компонентів на складі
-    /// </summary>
+    // Команда для зменшення кількості компонентів на складі
     public class ReduceStockCommand : ICommand
     {
         private readonly WarehouseWithObserver _warehouse;

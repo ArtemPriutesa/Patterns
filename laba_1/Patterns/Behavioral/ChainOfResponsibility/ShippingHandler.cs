@@ -4,6 +4,7 @@ namespace Patterns.Behavioral.ChainOfResponsibility
 {
     public class ShippingHandler : OrderHandler
     {
+        // Обробник для підготовки замовлення до доставки
         public override void Handle(OrderRequest request)
         {
             if (!request.IsStockReserved)

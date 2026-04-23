@@ -2,6 +2,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.ChainOfResponsibility
 {
+    // Клас для передачі інформації про замовлення між обробниками
     public class OrderRequest
     {
         public Order Order { get; set; }

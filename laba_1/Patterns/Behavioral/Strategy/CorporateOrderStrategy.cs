@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Strategy
 {
+    // Конкретна стратегія обробки замовлення для корпоративних клієнтів
     public class CorporateOrderStrategy : IOrderProcessingStrategy
     {
         public string GetName() => "Корпоративне замовлення";

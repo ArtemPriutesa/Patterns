@@ -2,6 +2,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.ChainOfResponsibility
 {
+    // Абстрактний клас для обробників замовлення
     public abstract class OrderHandler
     {
         protected OrderHandler? nextHandler;

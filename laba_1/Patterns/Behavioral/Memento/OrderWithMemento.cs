@@ -4,6 +4,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Memento
 {
+    // Розширений клас замовлення з підтримкою Memento для збереження та відновлення станів
     public class OrderWithMemento : Order
     {
         private readonly OrderMementoCaretaker _caretaker = new();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Patterns.Behavioral.Visitor
 {
+    // Клас, який представляє збирання комп'ютера, яке складається з різних компонентів та приймає відвідувача для виконання операцій над усіма компонентами
     public class ComputerAssembly
     {
         private readonly List<IComputerComponent> _components = new();

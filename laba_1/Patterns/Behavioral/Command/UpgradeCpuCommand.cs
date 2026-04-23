@@ -4,9 +4,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Command
 {
-    /// <summary>
-    /// Команда для оновлення CPU комп'ютера (upgrade)
-    /// </summary>
+    // Команда для оновлення CPU в замовленні
     public class UpgradeCpuCommand : ICommand
     {
         private readonly Order _order;

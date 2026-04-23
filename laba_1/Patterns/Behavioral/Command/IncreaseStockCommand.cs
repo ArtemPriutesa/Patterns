@@ -3,6 +3,7 @@ using Patterns.Behavioral.Observer;
 
 namespace Patterns.Behavioral.Command
 {
+    // Команда для збільшення кількості компонентів на складі
     public class IncreaseStockCommand : ICommand
     {
         private readonly WarehouseWithObserver _warehouse;

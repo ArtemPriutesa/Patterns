@@ -4,6 +4,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Memento
 {
+    // Клас для збереження стану замовлення (Memento)
     public class OrderMemento
     {
         public string OrderId { get; private set; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Patterns.Behavioral.Observer
 {
+    // Спостерігач для збору аналітики про зміни запасів на складі
     public class AnalyticsObserver : IWarehouseObserver
     {
         private readonly Dictionary<string, int> _changeHistory = new();

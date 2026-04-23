@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Patterns.Behavioral.Observer
 {
+    // Простий спостерігач для отримання сповіщень про зміни на складі
     public class WarehouseNotifier : IWarehouseObserver
     {
         private readonly string _name;

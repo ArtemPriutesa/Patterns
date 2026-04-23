@@ -1,5 +1,6 @@
 namespace Patterns.Behavioral.Visitor
 {
+    // Конкретний компонент комп'ютера, який реалізує інтерфейс IComputerComponent та приймає відвідувача для виконання операцій над собою
     public class MotherboardComponent : IComputerComponent
     {
         private readonly string _name;

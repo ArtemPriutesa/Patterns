@@ -2,9 +2,7 @@ using System;
 
 namespace Patterns.Behavioral.ChainOfResponsibility
 {
-    /// <summary>
-    /// Обробник резервування компонентів на складі
-    /// </summary>
+    // Обробник для резервування компонентів на складі
     public class StockReservationHandler : OrderHandler
     {
         public override void Handle(OrderRequest request)

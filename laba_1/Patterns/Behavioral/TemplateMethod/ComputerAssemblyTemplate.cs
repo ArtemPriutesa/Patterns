@@ -2,6 +2,7 @@ using System;
 
 namespace Patterns.Behavioral.TemplateMethod
 {
+    // Абстрактний клас, який визначає шаблон збирання комп'ютера та кроки, які повинні бути реалізовані конкретними класами
     public abstract class ComputerAssemblyTemplate
     {
         protected string ProcessorType { get; set; } = string.Empty;

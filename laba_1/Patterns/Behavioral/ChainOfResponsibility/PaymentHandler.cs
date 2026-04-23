@@ -3,11 +3,9 @@ using System.Threading;
 
 namespace Patterns.Behavioral.ChainOfResponsibility
 {
-    /// <summary>
-    /// Обробник оплати замовлення
-    /// </summary>
     public class PaymentHandler : OrderHandler
     {
+        // Обробник для обробки платежу
         public override void Handle(OrderRequest request)
         {
             if (!request.IsValidated)

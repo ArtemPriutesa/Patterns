@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.Strategy
 {
+    // Клас, який використовує стратегію обробки замовлення для виконання різних алгоритмів обробки та розрахунку ціни
     public class OrderProcessor
     {
         private IOrderProcessingStrategy _strategy;

@@ -3,6 +3,7 @@ using Patterns.Behavioral.State;
 
 namespace Patterns.Behavioral.ChainOfResponsibility
 {
+    // Обробник для валідації замовлення
     public class ValidateOrderHandler : OrderHandler
     {
         public override void Handle(OrderRequest request)
