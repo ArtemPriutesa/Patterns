@@ -2,9 +2,9 @@ fun filterOddNumbers(numbers: List<Int>): List<Int> {
     return numbers.filter { it % 2 != 0 }
 }
 
-fun excalculateAverage(list2: List<Double>): Double = list2.sumOf { it } / list2.size
+fun calculateAverage(list2: List<Double>): Double = list2.sumOf { it } / list2.size
 
-fun sortAlphabetically(list3: List<String>): List<String> = list3.sortedBy { it.get(index = 0) }
+fun sortAlphabetically(list3: List<String>): List<String> = list3.sortedBy { it }
 
 fun sumOfEvens(list4: List<Int>): Int {
     return list4.filter { it % 2 == 0 }
@@ -61,7 +61,7 @@ fun main() {
     val arr3 = listOf("apple", "river", "sunset", "code", "matrix", "cloud", "forest", "pixel", "storm", "echo")
 
     println("1. filterOddNumbers: ${filterOddNumbers(arr1)}")
-    println("2. excalculateAverage: ${excalculateAverage(arr2)}")
+    println("2. calculateAverage: ${calculateAverage(arr2)}")
     println("3. sortAlphabetically: ${sortAlphabetically(arr3)}")
     println("4. sumOfEvens: ${sumOfEvens(arr1)}")
     println("5. calculateFactorial(5): ${calculateFactorial(5)}")

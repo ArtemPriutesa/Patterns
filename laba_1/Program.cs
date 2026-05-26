@@ -16,6 +16,9 @@ using Patterns.Behavioral.Memento;
 using Patterns.Behavioral.Mediator;
 using Patterns.Behavioral.Iterator;
 using Patterns.Behavioral.TemplateMethod;
+using Patterns.Structural.Functional;
+using Patterns.Behavioral.Strategy.Functional;
+
 
 static class Program
 {
@@ -222,5 +225,68 @@ static class Program
         Console.WriteLine("22. Шаблонний метод (Template Method)");
         var gamingAssembly = new GamingComputerAssembly();
         gamingAssembly.AssembleComputer("Gaming PC RTX 4090");
+        
+        Console.WriteLine("\n=== ФУНКЦІОНАЛЬНІ ВЕРСІЇ ПАТТЕРНІВ ===\n");
+        
+        Console.WriteLine("Функціональний Декоратор");
+        var baseCpuDisplay = CpuDecorators.DisplayBase();
+        var cpuWithMetrics = baseCpuDisplay.WithMetrics("Виведення CPU");
+        var cpuWithDetails = cpuWithMetrics.WithDetails($"Максимальна частота: 5.8 GHz");
+        cpuWithDetails(intelCpu, 0);
+        Console.WriteLine();
+        
+        Console.WriteLine("Функціональний Фабричний метод");
+        var corporateInvoiceFactory = Patterns.FactoryMethodPattern.Functional.InvoiceFactory.GetCreator("corporate");
+        var functionalProcessor = new Patterns.FactoryMethodPattern.Functional.OrderProcessor(corporateInvoiceFactory);
+        functionalProcessor.ProcessOrder(gamingPc);
+        Console.WriteLine();
+        
+        Console.WriteLine("Функціональна Стратегія");
+        var bulkStrategy = OrderStrategies.Bulk(30);
+        var functionalBulkProcessor = new FunctionalOrderProcessor(bulkStrategy, basePrice);
+        var bulkOrder = new Order("ORD-BULK", gamingPc);
+        functionalBulkProcessor.ProcessOrder(bulkOrder);
+        functionalBulkProcessor.DisplayPriceCalculation();
+
+        Console.WriteLine("\n=== ДЕМОНСТРАЦІЯ ПАТТЕРНА НАВКОЛИШНЬОГО ВИКОНАННЯ (Execute Around) ===\n");
+        
+        // Демонстрація базового виведення
+        Console.WriteLine("1. Базове виведення:");
+        var displayCpu = CpuDecorators.DisplayBase();
+        displayCpu(intelCpu, 0);
+        Console.WriteLine();
+        
+        // Демонстрація з одним декоратором (метрики)
+        Console.WriteLine("2. З вимірюванням часу (один декоратор):");
+        var displayWithTime = CpuDecorators.DisplayBase().WithMetrics("Запит до CPU");
+        displayWithTime(intelCpu, 0);
+        Console.WriteLine();
+        
+        // Демонстрація з двома декораторами (метрики + деталі)
+        Console.WriteLine("3. З метриками та деталями (два декоратори):");
+        var displayFull = CpuDecorators.DisplayBase()
+            .WithMetrics("Отримання інформації")
+            .WithDetails("Тип: Процесор Intel нового покоління");
+        displayFull(intelCpu, 0);
+        Console.WriteLine();
+        
+        // Демонстрація з трьома декораторами (вложений execute around)
+        Console.WriteLine("4. З трьома рівнями огортання (Execute Around паттерн):");
+        var complexDisplay = CpuDecorators.DisplayBase()
+            .WithMetrics("Першого рівня обробка")
+            .WithDetails(">>> Входимо до першого рівня <<<")
+            .WithMetrics("Другого рівня обробка");
+        complexDisplay(intelCpu, 0);
+        Console.WriteLine();
+        
+        // Демонстрація практичного приклада Execute Around
+        Console.WriteLine("5. Практичний приклад Execute Around з логуванням:");
+        var productionDisplay = CpuDecorators.DisplayBase()
+            .WithDetails("[LOG] Початок обробки CPU запиту")
+            .WithMetrics("Основна операція")
+            .WithDetails("[LOG] Завершення обробки CPU запиту");
+        productionDisplay(intelCpu, 0);
+
+        
     }
 }
